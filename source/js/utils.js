@@ -845,7 +845,7 @@ const anzhiyu = {
       return;
     }
     const urlParams = new URLSearchParams(window.location.search);
-    const userId = "8152976493";
+    const userId = "17952253068";
     const userServer = "netease";
     const anMusicPageMeting = document.getElementById("anMusic-page-meting");
     if (urlParams.get("id") && urlParams.get("server")) {
@@ -878,7 +878,7 @@ const anzhiyu = {
     const anMusicSwitchingBtn = anMusicPage.querySelector("#anMusicSwitching");
     const metingAplayer = anMusicPage.querySelector("meting-js").aplayer;
     //初始化音量
-    metingAplayer.volume(0.8, true);
+    metingAplayer.volume(0.4, true);
     metingAplayer.on("loadeddata", function () {
       anzhiyu.changeMusicBg();
     });
@@ -902,16 +902,16 @@ const anzhiyu = {
 
     // 监听增加单曲按钮
     anMusicBtnGetSong.addEventListener("click", () => {
-      if (changeMusicListFlag) {
+      // if (changeMusicListFlag) {
         const anMusicPage = document.getElementById("anMusic-page");
         const metingAplayer = anMusicPage.querySelector("meting-js").aplayer;
         const allAudios = metingAplayer.list.audios;
         const randomIndex = Math.floor(Math.random() * allAudios.length);
         // 随机播放一首
         metingAplayer.list.switch(randomIndex);
-      } else {
-        anzhiyu.cacheAndPlayMusic();
-      }
+      // } else {
+      //   anzhiyu.cacheAndPlayMusic();
+      // }
     });
     anMusicRefreshBtn.addEventListener("click", () => {
       localStorage.removeItem("musicData");
